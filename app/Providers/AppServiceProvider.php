@@ -20,6 +20,10 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Table::configureUsing(function (Table $table): void {
+            $table
+                ->emptyStateHeading('Default heading')
+                ->emptyStateDescription('Default description');
+        });
     }
 }
